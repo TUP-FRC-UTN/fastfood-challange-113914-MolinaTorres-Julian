@@ -1,0 +1,12 @@
+<p>Pedidos listos para entregar</p>
+<ul>
+    @if (readyOrders.length === 0) {
+    <li>No hay pedidos listos para entregar</li>
+    } @else {
+    @for (readyOrder of readyOrders; track $index) {
+    <li>
+        {{readyOrder.number}} - {{readyOrder.name}} <button (click)="deliverOrder(readyOrder)">Entregar!</button>
+    </li>
+    }
+    }
+</ul>

@@ -1,0 +1,13 @@
+<h1>Restaurant FastFood</h1>
+<p>Pedidos ingresados</p>
+<ul>
+    @for (order of initialOrders; track $index) {
+    <li>
+        Pedido {{order.number}} - {{order.name}}: {{order.description}}
+    </li>
+    }
+</ul>
+<app-delivery-point></app-delivery-point>
+
+<app-pos (orderCreated)="addOrder($event)"></app-pos>
+<app-kitchen></app-kitchen>

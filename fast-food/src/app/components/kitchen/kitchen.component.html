@@ -1,0 +1,19 @@
+<h2>Cocina</h2>
+<h3>Pendiente de cocinar</h3>
+<ul>
+    @for (order of orders; track $index) {
+    <li>({{ order.number }}) - {{ order.description }} <button (click)="cookOrder(order)" [disabled]="cookingOrder || order.isCooking">Cocinar</button></li>
+    }
+</ul>
+
+<h3>Pedidos en cocción</h3>
+<ul>
+    @if (cookingOrder) {
+    <li>
+        ({{cookingOrder.number}}) - {{cookingOrder.description}}
+        <button (click)="finishCooking()">Pedido Terminado!</button>
+    </li>
+    } @else {
+        <li>No hay pedidos en cocción</li>
+    }
+</ul>

@@ -1,0 +1,12 @@
+<h2>Point of Sell - POS</h2>
+<form (ngSubmit)="submitOrder()">
+    <label for="name">Nombre: </label>
+    <input type="text" [(ngModel)]="order.name" name="name" required>
+    <br>
+    <br>
+    <label for="description">Pedido: </label>
+    <input type="text" [(ngModel)]="order.description" name="description" required>
+    <br>
+    <br>
+    <button type="submit">Ordenar</button>
+</form>
